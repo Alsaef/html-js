@@ -10,7 +10,6 @@
    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- font awesome cdn -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="bg-white px-6 py-3 rounded-lg shadow">
@@ -26,7 +25,7 @@
             <span>0</span><img class="w-6" src="./assets/heart.png" alt="" />
           </div>
           <div class="flex items-center px-6 py-2 bg-[#41ff6b1a] gap-2 rounded-full">
-            <span>100</span><img class="w-6" src="./assets/coin.png" alt="" />
+            <span id="coins">100</span><img class="w-6" src="./assets/coin.png" alt="" />
           </div>
 
           <div>
@@ -59,10 +58,10 @@
     
 
         
-     <section id="main-section" class="w-11/12 mx-auto py-7 grid grid-cols-12 gap-7 bg-[#f5fff6]">
+     <section id="main-section" class="w-11/12 mx-auto py-7 grid lg:grid-cols-12  gap-7 bg-[#f5fff6]">
        <section id="card-section" class="col-span-9">
         
-          <div class="card-items grid grid-cols-3 gap-7 ">
+          <div class="card-items grid lg:grid-cols-3 grid-cols-1 gap-7 ">
             <div class="card shadow-lg px-4 py-3 h-full">
             <div class="flex items-center justify-between ">
               <img class="w-9" src="./assets/emergency.png" alt="">
@@ -74,10 +73,10 @@
             <div><button class="rounded-3xl mt-1 bg-gray-200 px-3 py-2">All</button></div>
             <div class="flex gap-3 my-3 items-center justify-center">
               <button class="px-5 py-2 w-[50%] border rounded"><i class="fa-regular fa-copy"></i>Copy</button>
-            <button class="px-5 w-[50%] py-2 border rounded bg-[#00A63E] text-white"><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="px-5 w-[50%] py-2 border rounded bg-[#00A63E] text-white callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
-          <div class="card  ">
+          <div class="card">
             <div class="flex justify-between w-4">
               <img src="./assets/police.png" alt="">
              <i class="fa-regular fa-heart"></i>
@@ -88,7 +87,7 @@
             <div><button>Police</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card  ">
@@ -102,7 +101,7 @@
             <div><button>Fire</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card ">
@@ -116,7 +115,7 @@
             <div><button>Health</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card ">
@@ -130,7 +129,7 @@
             <div><button>Help</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card  ">
@@ -144,7 +143,7 @@
             <div><button>Govt</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card  ">
@@ -158,7 +157,7 @@
             <div><button>Electricity</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card  ">
@@ -172,7 +171,7 @@
             <div><button>NGO</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           <div class="card  ">
@@ -186,7 +185,7 @@
             <div><button>Travel</button></div>
             <div class="flex gap-3">
               <button><i class="fa-regular fa-copy"></i>Copy</button>
-            <button><i class="fa-solid fa-phone"></i>Call</button>
+            <button class="callBtn"><i class="fa-solid fa-phone"></i>Call</button>
             </div>
           </div>
           </div>
@@ -195,7 +194,7 @@
       
       <section id="history-section" class="col-span-3">
         <div class="flex justify-between items-center">
-          <p class="text-xl font-medium"><i class="fa-regular fa-clock"></i>Call History</p>
+          <p class="text-xl font-medium"><i class="fa-regular fa-clock mx-2"></i>Call History</p>
           <button id="clear-btn" class="bg-[#00A63E] rounded-3xl text-[#ffffff] font-semibold text-sm py-3 px-9">Clear</button>
         </div>
       </section>
